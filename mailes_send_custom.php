@@ -7,6 +7,7 @@ Version:     1.0
 Author:      Alexander Rodriguez
 Author URI:  https://vog365/
 License:     GPL2
+ Text Domain: vog-mail
 */
 
 // Asegurarse de que WordPress esté cargado.
@@ -14,11 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Salir si se accede directamente.
 }
 
+
+require_once plugin_dir_path( __FILE__ ) . 'admin/index.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-
 
 
 function outlook_custom_send_mail($to_email, $subject, $message_html, $message_plain = '') {
